@@ -74,11 +74,9 @@ class Ex extends Component {
                             <Item regular style={styles.lol}>
                                 <Input placeholder='Inset message' />
                             </Item>
-                            <Item regular style={styles.lol}>
-                                <Button onPress={this._onPressButton.bind(this)}>
-                                    <Text>Send notice</Text>
-                                </Button>
-                            </Item>
+                            <Button onPress={this._onPressButton.bind(this)}>
+                                <Text>Send notice</Text>
+                            </Button>
                         </Content>
                         <Footer>
                             <FooterTab>

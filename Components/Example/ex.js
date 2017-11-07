@@ -8,6 +8,7 @@ import Colors from '../../native-base-theme/variables/commonColor';
 import material from '../../native-base-theme/variables/material';
 import { Permissions, Notifications } from 'expo';
 import axios from 'axios'
+import { Router, Scene, Actions } from 'react-native-router-flux';
 
 
 class Ex extends Component {
@@ -50,6 +51,10 @@ class Ex extends Component {
         Alert.alert('You tapped the Menu!')
     }
 
+  _toPage2() {
+    Actions.Page2()
+  }
+
     render() {
         return (
             this.state.fontsAreLoaded ?
@@ -76,6 +81,9 @@ class Ex extends Component {
                             </Item>
                             <Button onPress={this._onPressButton.bind(this)}>
                                 <Text>Send notice</Text>
+                            </Button>
+                            <Button onPress={this._toPage2}>
+                                <Text>To page 2</Text>
                             </Button>
                         </Content>
                         <Footer>

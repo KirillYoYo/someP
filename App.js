@@ -2,6 +2,9 @@ import React from 'react';
 import {StyleSheet, View, ActivityIndicator} from 'react-native';
 import { Container, Button, Text, Title, Spinner } from 'native-base';
 import Ex from './Components/Example/ex'
+import AppInner from './AppInner'
+import Page2 from './Components/Page2/index'
+import { Router, Scene, Stack } from 'react-native-router-flux';
 
 export default class App extends React.Component {
 
@@ -32,17 +35,12 @@ export default class App extends React.Component {
         const {loading, fontsAreLoaded} = this.state;
 
         return (
-            loading && !fontsAreLoaded ?
-                <View style={styles.container}>
-                    <Text>Loading at 3 sec</Text>
-                    <Spinner color='red' />
-                    <ActivityIndicator
-                        animating={loading}
-                        style={{height: 80}}
-                        size="large"
-                    />
-                </View>
-                :  <Ex />
+          <Router>
+              <Stack key="root">
+                  <Scene key="AppInner" component={AppInner} title="Main"/>
+                  <Scene key="Page2" component={Page2} title="Page2"/>
+              </Stack>
+          </Router>
         );
     }
 }
